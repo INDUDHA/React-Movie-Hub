@@ -118,7 +118,7 @@ export const serieslist = [
     year: "2022",
     stars: "Kathir,Aishwaraya,Shreya",
     imdb_rating: "8.2",
-    imdb_votes: "9,101 ",
+    imdb_votes: "9,101",
     epi: "8",
   },
   {
