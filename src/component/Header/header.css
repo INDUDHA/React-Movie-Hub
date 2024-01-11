@@ -1,0 +1,40 @@
+.header {
+  text-align: left;
+  background: #1a242f;
+  color: white;
+  height: 50px;
+  padding-left: 2%;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: skyblue;
+}
+.user_icon {
+  height: 30px;
+  padding-right: 2%;
+  cursor: none;
+}
+.header input {
+  width: 200px;
+  color: black;
+  background-color: white;
+  padding-left: 1%;
+  padding-right: 1%;
+  border: none;
+}
+button {
+  cursor: pointer;
+  height: 38px;
+  width: 40px;
+}
+.search{
+  height: 38px;
+  
+ 
+}

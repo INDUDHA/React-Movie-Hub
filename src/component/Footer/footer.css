@@ -1,0 +1,17 @@
+.footer {
+  text-align: center;
+  background: #1a242f;
+  color: white;
+  height: 50px;
+  padding: 0 2%;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+}
+
+.log {
+  font-size: 20px;
+  font-weight: 600;
+  color: skyblue;
+  text-align: center;
+}

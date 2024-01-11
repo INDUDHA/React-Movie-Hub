@@ -1,0 +1,56 @@
+.heading {
+  font-size: 20px;
+  padding-left: 2%;
+  font-weight: 600;
+}
+.rating {
+  padding: 2%;
+  font-size: 18px;
+  margin-bottom: 10%;
+}
+.icon {
+  color: #ff9e00;
+}
+.mt {
+  font-size: 20px;
+  padding-left: 2%;
+  font-weight: 600;
+  color: skyblue;
+}
+.desc {
+  padding: 2%;
+}
+.head {
+  padding-left: 2%;
+  padding-bottom: 1%;
+  width: 115px;
+  display: inline-block;
+  font-weight: 500;
+  color: skyblue;
+}
+.head_ {
+  padding-left: 2%;
+  padding-bottom: 1%;
+  width: auto;
+  display: inline-block;
+  font-weight: 500;
+  color: skyblue;
+}
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: right;
+  padding-right: 2%;
+  padding-bottom: 1%;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.img {
+  height: 350px;
+}
+
+  
