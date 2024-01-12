@@ -12,28 +12,52 @@ function Movie({ searchResults }) {
   const seriesToDisplay =
     searchResults.series?.length > 0 ? searchResults.series : serieslist;
 
-  const [scrollPosition, setScrollPosition] = React.useState(0);
-  const scrollContainerRef = React.useRef(null);
+  const [movieScrollPosition, setMovieScrollPosition] = React.useState(0);
+  const [seriesScrollPosition, setSeriesScrollPosition] = React.useState(0);
+  const movieScrollContainerRef = React.useRef(null);
+  const seriesScrollContainerRef = React.useRef(null);
 
   const scrollStep = 350;
 
-  const handleScrollLeft = () => {
-    const newScrollPosition = Math.max(0, scrollPosition - scrollStep);
-    setScrollPosition(newScrollPosition);
-    scrollContainerRef.current.scrollTo({
+  const handleMovieScrollLeft = () => {
+    const newScrollPosition = Math.max(0, movieScrollPosition - scrollStep);
+    setMovieScrollPosition(newScrollPosition);
+    movieScrollContainerRef.current.scrollTo({
       left: newScrollPosition,
       behavior: "smooth",
     });
   };
 
-  const handleScrollRight = () => {
+  const handleMovieScrollRight = () => {
     const newScrollPosition = Math.min(
-      scrollContainerRef.current.scrollWidth -
-        scrollContainerRef.current.clientWidth,
-      scrollPosition + scrollStep
+      movieScrollContainerRef.current.scrollWidth -
+        movieScrollContainerRef.current.clientWidth,
+      movieScrollPosition + scrollStep
     );
-    setScrollPosition(newScrollPosition);
-    scrollContainerRef.current.scrollTo({
+    setMovieScrollPosition(newScrollPosition);
+    movieScrollContainerRef.current.scrollTo({
+      left: newScrollPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const handleSeriesScrollLeft = () => {
+    const newScrollPosition = Math.max(0, seriesScrollPosition - scrollStep);
+    setSeriesScrollPosition(newScrollPosition);
+    seriesScrollContainerRef.current.scrollTo({
+      left: newScrollPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const handleSeriesScrollRight = () => {
+    const newScrollPosition = Math.min(
+      seriesScrollContainerRef.current.scrollWidth -
+        seriesScrollContainerRef.current.clientWidth,
+      seriesScrollPosition + scrollStep
+    );
+    setSeriesScrollPosition(newScrollPosition);
+    seriesScrollContainerRef.current.scrollTo({
       left: newScrollPosition,
       behavior: "smooth",
     });
@@ -44,10 +68,10 @@ function Movie({ searchResults }) {
       <div className="heading">Movies</div>
       <div className="scroll-container">
         <div className="scroll-buttons">
-          <button className="scroll-button" onClick={handleScrollLeft}>
+          <button className="scroll-button" onClick={handleMovieScrollLeft}>
             {"<"}
           </button>
-          <div className="scroll-content" ref={scrollContainerRef}>
+          <div className="scroll-content" ref={movieScrollContainerRef}>
             <div className="movie-list">
               {moviesToDisplay.map((movie, index) => (
                 <Concept
@@ -59,7 +83,7 @@ function Movie({ searchResults }) {
               ))}
             </div>
           </div>
-          <button className="scroll-button" onClick={handleScrollRight}>
+          <button className="scroll-button" onClick={handleMovieScrollRight}>
             {">"}
           </button>
         </div>
@@ -69,10 +93,10 @@ function Movie({ searchResults }) {
       <div className="heading">Series</div>
       <div className="scroll-container">
         <div className="scroll-buttons">
-          <button className="scroll-button" onClick={handleScrollLeft}>
+          <button className="scroll-button" onClick={handleSeriesScrollLeft}>
             {"<"}
           </button>
-          <div className="scroll-content" ref={scrollContainerRef}>
+          <div className="scroll-content" ref={seriesScrollContainerRef}>
             <div className="movie-list">
               {seriesToDisplay.map((series, index) => (
                 <Series
@@ -84,7 +108,7 @@ function Movie({ searchResults }) {
               ))}
             </div>
           </div>
-          <button className="scroll-button" onClick={handleScrollRight}>
+          <button className="scroll-button" onClick={handleSeriesScrollRight}>
             {">"}
           </button>
         </div>
